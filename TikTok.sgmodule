@@ -1,0 +1,12 @@
+#!name=tik tok
+#!desc=ios
+
+
+[URL Rewrite]
+
+(?<=_region=)CN(?=&) JP 307
+(?<=&mcc_mnc=)4 2 307
+^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+
+[MITM]
+hostname = %APPEND% *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com
